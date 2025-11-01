@@ -19,7 +19,7 @@ git clone https://github.com/ST2DCE/2024-2025.git
 * Add/Register credentials for git (source code) repository and docker registry.
   * Git : <https://github.com/ST2DCE/2024-2025.git>
     * username: ST2DCE
-    * password: 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
+    * password: xxxx
   * Docker Hub Repos : efrei2023/backend, efrei2023/frontend
     * username: efrei2023
     * password: efrei2023
