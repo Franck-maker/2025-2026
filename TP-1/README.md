@@ -11,13 +11,13 @@ The main objective of this work is to know how to build an application based on 
 ### 1 - Retrieve the source code repository locally on your virtual machine with the command ###
 
 ```console
-git clone https://github.com/ST2DCE/2024-2025.git
+git clone https://github.com/ST2DCE/2025-2026.git
 ```
 
 ### 2 - Prepare Jenkins ###
 
 * Add/Register credentials for git (source code) repository and docker registry.
-  * Git : <https://github.com/ST2DCE/2024-2025.git>
+  * Git : <https://github.com/ST2DCE/2025-2026.git>
     * username: ST2DCE
     * password: xxxx
   * Docker Hub Repos : efrei2023/backend, efrei2023/frontend
@@ -45,13 +45,13 @@ git clone https://github.com/ST2DCE/2024-2025.git
   * Go to the 'backend' directory and type the command :
 
    ```console
-     docker build -t backend-$NAME:YEAR_OF_BIRTH .
+     docker build -t backend-$NAME .
    ```
 
   * Go to the 'frontend' directory and type the command :
 
    ```console
-     docker build -t frontend-$NAME:YEAR_OF_BIRTH .
+     docker build -t frontend-$NAME .
    ```
 
 ### 2. Running the backend and frontend ###
@@ -59,13 +59,13 @@ git clone https://github.com/ST2DCE/2024-2025.git
 * Run the 'backend' container with the following  command :
 
    ```console
-     docker run -d --net=efrei -e POSTGRES_PASSWORD=postgres --name backend backend-$NAME:YEAR_OF_BIRTH
+     docker run -d --net=efrei -e POSTGRES_PASSWORD=postgres --name backend backend-$NAME
    ```
 
 * Run the 'frontend' container with the following  command :
 
    ```console
-     docker run -d --net=efrei  -p 8081:80 -e POSTGRES_PASSWORD=postgres --name frontend frontend-$NAME:YEAR_OF_BIRTH
+     docker run -d --net=efrei  -p 8081:80 -e POSTGRES_PASSWORD=postgres --name frontend frontend-$NAME
    ```
 
 To make sure your container is up and running, check the logs with the command:

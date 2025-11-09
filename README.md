@@ -1,6 +1,6 @@
 # README #
 
-This repository concerns the practical work on the "DevOps and Continuous Deployment" course taught at EFREI in Master 2 (ST2DCE), for a total of 28 hours, including practical exercices and project.
+This repository describes the expected work for the "DevOps and Continuous Deployment" course taught at EFREI in Master 2 (ST2DCE), for a total of 32 hours, including practical exercices and project.
 
 Practical exercises will be organized as the course progresses. The last two sessions will be reserved exclusively for the final project.
 
@@ -12,12 +12,12 @@ To achieve this goal, you need to have the following tools already installed and
 
 * Virtulbox with a working Linux distribution: e.g. Fedora, Debian/Ubuntu with root access
 On the deployed virtual machine, you must have the following tools installed
-  * Docker 27.3.1 or higher
-  * Minikube version: v1.34.0 or higher
-  * Kubernetes CLI (kubectl) v1.31.2 or higher
-  * Docker compose v2.29.6 or higher
+  * Docker 27.5.1 or higher
+  * Kind (Kubernetes IN Docker) version: v0.30.O or higher
+  * Kubernetes CLI (kubectl) v1.34.0 or higher
+  * Docker-compose (latest)
   * Jenkins version jenkins/jenkins:lts-jdk17 with suggested plugins selected by default running on the VM.
-  * Git version 2.47.0 or higher
+  * Git (latest)
 
 For all the duration of the workshop and the project, it is strongly recommended to keep the working environment functional.
 
@@ -44,7 +44,7 @@ Below is a summary of the content of each workshops. The TP-1, TP-2 and TP-3 fol
 
 * Step 2 -  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
-* Step 3 -  k get all -n argocd
+* Step 3 -  kubectl get all -n argocd
 
 * Step 4 -  kubectl port-forward svc/argocd-server -n argocd 8081:443
 
