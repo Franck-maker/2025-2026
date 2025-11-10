@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git branch: 'main' url: 'https://github.com/Franck-maker/2025-2026.git'
+        git branch: 'main'
       }
     }
     stage('Building backend image') {
