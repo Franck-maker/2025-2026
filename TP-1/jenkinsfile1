@@ -7,6 +7,11 @@ pipeline {
   }
 
   stages {
+    stage('Cloning Git') {
+      steps {
+        git branch: 'main'
+      }
+    }
     stage('Building backend image') {
       steps {
         script {
