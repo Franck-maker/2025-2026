@@ -2,7 +2,9 @@ def backendImage = ''
 def frontendImage = ''
 pipeline {
 
-  agent any
+  agent {
+    label 'jenkins-slave'
+  }
 
   stages {
     stage('Building backend image') {
