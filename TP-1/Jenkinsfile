@@ -11,7 +11,7 @@ pipeline {
       steps {
         script {
           dir('TP-1/backend') {
-            backendImage = docker.build("efrei2023/backend:1")
+            backendImage = docker.build("efrei2023/backend:Franck1")
 
           }
         }
@@ -32,7 +32,7 @@ pipeline {
       steps {
         script {
           dir('TP-1/frontend') {
-            frontendImage = docker.build("efrei2023/frontend:1")
+            frontendImage = docker.build("efrei2023/frontend:Franck1")
           }
         }
       }
