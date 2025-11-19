@@ -135,8 +135,8 @@ For the Service:
 ## Accessing and Using the App ##
 
 Once the two YAMLs have been applied:
-
-* Access your application with `kubectl port-forward service/frontend 8080:8000`.
+# le target port de fichier du service doit correspondre au port du conteneur
+* Access your application with `kubectl port-forward service/frontend 8083:80`.
 
 ## Kubernetes package manager : Helm ##
 

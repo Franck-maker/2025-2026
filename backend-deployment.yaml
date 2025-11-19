@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend-container
-          image: efrei2023/backend:1
+          image: efrei2023/backend:Franck1
           imagePullPolicy: Always
           ports:
             - containerPort: 5432
