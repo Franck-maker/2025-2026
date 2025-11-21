@@ -150,7 +150,7 @@ One of the many advantages of Helm is that it gives you a one-command installati
   
   `helm install my-blog bitnami/wordpress --set wordpressUsername=admin --set wordpressPassword=admin --set service.type=NodePort`
 
-  Step 3 - Access your app: `kubectl port-forward service/my-blog-wordpress 8080:80`
+  Step 3 - Access your app: `kubectl port-forward service/my-blog-wordpress 8081:80`
 
 ### Minikube dashboard overview ###
 
@@ -192,8 +192,10 @@ subjects:
 ```
 Apply the configuration : `kubectl apply -f dashboard-config.yaml`
 
-create an access token for the Dashboard with the command : `kubectl -n create token admin-user`
+create an access token for the Dashboard with the command : `kubectl -n "specify the namespace" create token admin-user`
 
 Access to the UI: `kubectl  port-forward service/kubernetes-dashboard-kong-proxy 8443:443`
+
+**passer en https pour accéder au port dans ce cas** 
 
 
