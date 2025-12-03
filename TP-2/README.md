@@ -150,7 +150,7 @@ One of the many advantages of Helm is that it gives you a one-command installati
   
   `helm install my-blog bitnami/wordpress --set wordpressUsername=admin --set wordpressPassword=admin --set service.type=NodePort`
 
-  Step 3 - Access your app: `kubectl port-forward service/my-blog-wordpress 8081:80`
+  Step 3 - Access your app: `kubectl port-forward service/my-blog-wordpress 8082:80`
 
 ### Minikube dashboard overview ###
 
@@ -197,5 +197,18 @@ create an access token for the Dashboard with the command : `kubectl -n "specify
 Access to the UI: `kubectl  port-forward service/kubernetes-dashboard-kong-proxy 8443:443`
 
 **passer en https pour accéder au port dans ce cas** 
+
+## ArgoCD Overview ##
+
+* Step 1 -  kubectl create namespace argocd
+
+* Step 2 -  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+* Step 3 -  kubectl get all -n argocd
+
+* Step 4 -  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d 
+
+* Step 5 -  kubectl port-forward svc/argocd-server -n argocd 8081:443
+
 
 

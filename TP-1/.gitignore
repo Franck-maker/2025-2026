@@ -1,2 +1,3 @@
 .venv
 frontend/__pycache__/
+Jenkinsfile.groovy
