@@ -1,0 +1,27 @@
+alertmanager:
+  config:
+    global:
+      resolve_timeout: 5m
+      smtp_smarthost: 'smtp.gmail.com:587'
+      smtp_from: 'foziefranck@gmail.com'
+      smtp_auth_username: 'foziefranck@gmail.com'
+      smtp_auth_password: 'rerd bopi wgbf jtqy'
+      smtp_require_tls: true
+    route:
+      group_by: ['job']
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 1h
+      receiver: 'email-receiver'  # Doit correspondre au nom ci-dessous
+      routes:
+      - match:
+          alertname: Watchdog
+        receiver: 'null' # On ignore l'alerte "Watchdog" qui sert juste de heartbeat
+    receivers:
+    - name: 'null'
+    - name: 'email-receiver'
+      email_configs:
+      - to: 'foziefranck@gmail.com'
+        send_resolved: true
+        headers:
+          Subject: "ALERTE PROMETHEUS: {{ .CommonAnnotations.summary }}"

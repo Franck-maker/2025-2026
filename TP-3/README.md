@@ -99,6 +99,7 @@ serverFiles:
 Apply the configuration update with : `helm upgrade --reuse-values -f prometheus-alerts-rules.yaml prometheus prometheus-community/prometheus`
 
 Delete the 'prometheus-prometheus-pushgateway' deployment and see that you have an alert in AlertManager UI.
+`if we delete the pod the deployment will regenerate it, so we have to delete the deployments hence it'll delete all the pods`
 
 ## Configure AlertManager to send Alerts by Email ##
 
@@ -155,6 +156,9 @@ To continue the exercise, follow the instructions displayed on the console after
 ## Install  Grafana/Loki Agent (Alloy) ##
 
 Install Alloy  Helm chart with the provided config:
+Alloy c'est l'agent qui va collecter les logs de chaque élément (pods,services, VM, ...) et
+les rapatrier au niveau de loki
+serveur loki
 
 ```console
 helm install alloy grafana/alloy  -f alloy-config.yaml -n monitoring
